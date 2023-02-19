@@ -6,6 +6,8 @@
   --color-text-dark: #434455;
   --color-text-light: #e7e9fc;
   --color-dgd-button-active: #404bbf;
+  --color-subtitle-text: #8e8f99;
+  --color-footer-social-icon-active: #31d0aa;
 }
 
 h1,
@@ -91,6 +93,12 @@ body {
 .section-portfolio {
   padding-top: 96px;
   padding-bottom: 120px;
+}
+
+.social-icon {
+  width: 16px;
+  height: 16px;
+  fill: var(--color-primery-light);
 }
 
 /* =============== /COMPONENTS ===============*/
@@ -184,6 +192,14 @@ body {
   padding-top: 188px;
   padding-bottom: 188px;
   text-align: center;
+
+  background-image: linear-gradient(
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero/people-office.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-title {
@@ -238,6 +254,38 @@ body {
   gap: 24px;
 }
 
+.list-icon::before {
+  content: '';
+  display: block;
+  height: 112px;
+  background: var(--color-primery-light);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.list-icon:hover::before,
+.list-icon:focus::before {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.antenna-icon::before {
+  background-image: url(../images/features-icon/antenna.svg);
+}
+
+.clock-icon::before {
+  background-image: url(../images/features-icon/clock.svg);
+}
+
+.diagram-icon::before {
+  background-image: url(../images/features-icon/diagram.svg);
+}
+
+.astronaut-icon::before {
+  background-image: url(../images/features-icon/astronaut.svg);
+}
+
 /* =============== /FEATURES =============== */
 
 /* =============== WORKS =============== */
@@ -279,7 +327,77 @@ body {
   padding-bottom: 32px;
 }
 
+.team-text {
+  margin-bottom: 8px;
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+.social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-primery);
+  border-radius: 50%;
+  background-position: center;
+}
+
+.social-link:hover,
+.social-link:focus {
+  background-color: var(--color-dgd-button-active);
+}
+
 /* =============== /TEAM =============== */
+
+/* =============== CUSTOMERS =============== */
+
+.customers-section {
+  padding-top: 130px;
+}
+
+.customers-list {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.customers-list-icon {
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  flex-basis: calc((100% - 5 * 24px) / 6);
+}
+
+.customers-icon-link {
+  display: inline-block;
+  padding: 16px 32px;
+  border: 1px solid var(--color-subtitle-text);
+  border-radius: 4px;
+}
+
+.customers-icon-link:hover,
+.customers-icon-link:focus {
+  border: 1px solid var(--color-dgd-button-active);
+}
+
+.customers-icon {
+  width: 104px;
+  height: 56px;
+  fill: var(--color-subtitle-text);
+}
+
+.customers-list-icon:hover .customers-icon,
+.customers-list-icon:focus .customers-icon {
+  fill: var(--color-dgd-button-active);
+}
+
+/* =============== /CUSTOMERS =============== */
 
 /* =============== FOOTER =============== */
 
@@ -307,6 +425,36 @@ body {
 .footer-text {
   color: var(--color-text-light);
   width: 264px;
+}
+
+.footer-container {
+  display: flex;
+  gap: 120px;
+}
+
+.footer-text-social {
+  color: var(--color-text-light);
+  margin-bottom: 16px;
+}
+
+.footer-social-lists {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social-link {
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.footer-social-link:hover,
+.footer-social-link:focus {
+  background: var(--color-footer-social-icon-active);
 }
 
 /* =============== /FOOTER =============== */
@@ -354,23 +502,22 @@ body {
   padding-top: 32px;
   padding-bottom: 32px;
   padding-left: 16px;
-  border-left: 1px solid var(--color-text-light);
-  border-bottom: 1px solid var(--color-text-light);
-  border-right: 1px solid var(--color-text-light);
+
+  border: 1px solid var(--color-text-light);
+  border-top: none;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
-.portfolio-card-content:hover,
-.portfolio-card-content:focus {
-  border: 0.5px solid var(--color-primery-light);
+.portfolio-iteam:hover,
+.portfolio-iteam:focus {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-iteam {
-  display: flex;
-  flex-basis: calc((100% - 2 * 24px) / 3);
   text-align: start;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+  flex-basis: calc((100% - 2 * 24px) / 3);
 }
 
 /* =============== /PORTFOLIO =============== */
